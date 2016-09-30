@@ -1,0 +1,80 @@
+class Person
+{
+     String Name;
+     String address;
+ 
+     Person(String pName, String paddress)
+     {
+              Name = pName;
+              address = paddress;
+      }
+
+      void Display()
+      {
+            System.out.println("Name : " + Name);
+            System.out.println("address: " + address);
+       }
+} 
+
+class Student extends Person
+{
+     int year;
+     String program;
+     double fee;
+ 
+     Student(String pName, String paddress, int peyear, String peprogram,double pefee )
+     {
+          super(pName,paddress);
+         year =peyear ;
+          program= peprogram;
+          fee = pefee;         
+      }
+     void Display()
+     {
+            super.Display();
+
+            System.out.println("year: " + year);
+            System.out.println("program: " + program);
+            System.out.println("fee : " + fee);
+     }
+}
+
+class Staff extends Person
+{
+      String School;
+     double pay;
+ 
+     Staff(String pName, String paddress, String peSchool, double pepay)
+     {
+          super(pName,paddress);
+          School = peSchool;
+          pay=pepay;   
+		  
+      }
+     void Display()
+     {
+            super.Display();
+
+            System.out.println("School : " + School);
+            System.out.println("pay : " + pay);
+            
+     }
+}
+
+class InheritanceDemo
+{
+       public static void main(String args[])
+       {
+               Person pObj = new Person("harshitha","kurnool");
+               Student sObj = new Student("harshitha","kadapa",2016,"Android",3534868);
+               Staff tObj = new Staff("divya","knl","zph",6000);
+               System.out.println("Person :");
+               pObj.Display();
+               System.out.println("");
+               System.out.println("Student :");
+               sObj.Display();
+               System.out.println("");
+               System.out.println("Teacher :");
+               tObj.Display();
+        }
+}
